@@ -67,15 +67,15 @@ namespace game_of_life
         return cells_;
     }
 
-    bool DataSet::GetCell(int column, int row) const {
-        return cells_.at(row*GetNumberColumns()+column);
+    bool DataSet::GetCell(int row, int column) const {
+        return cells_.at((row + 1) * column);
     }
 
-    void DataSet::SetCell(int column, int row, bool new_state) {
-        cells_[row*GetNumberColumns()+column] = new_state;
+    void DataSet::SetCell(int row, int column, bool new_state) {
+        cells_[(row + 1) * column] = new_state;
     }
 
-    void DataSet::ToggleCell(int column, int row) {
+    void DataSet::ToggleCell(int row, int column) {
         SetCell(column, row, !GetCell(column, row));
     }
 
