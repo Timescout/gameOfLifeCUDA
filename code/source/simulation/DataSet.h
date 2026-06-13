@@ -51,11 +51,11 @@ namespace game_of_life {
 
         std::vector<bool> GetCells() const;
 
-        bool GetCell(int column, int row) const;
+        bool GetCell(int row, int column) const;
 
-        void SetCell(int column, int row, bool new_state);
+        void SetCell(int row, int column, bool new_state);
 
-        void ToggleCell(int column, int row);
+        void ToggleCell(int row, int column);
     };
 
 
