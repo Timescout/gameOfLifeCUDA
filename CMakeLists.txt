@@ -11,8 +11,12 @@ project(GameOfLifeCUDA LANGUAGES CXX CUDA)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# Link source files
+file(GLOB src_files ${CMAKE_CURRENT_SOURCE_DIR}/code/source/**/*.cpp)
+file(GLOB src_files ${CMAKE_CURRENT_SOURCE_DIR}/code/source/**/*.cu)
+
 # Setup main executable
-add_executable(main ${CMAKE_CURRENT_SOURCE_DIR}/code/main.cpp)
+add_executable(main ${CMAKE_CURRENT_SOURCE_DIR}/code/main.cpp ${src_files})
 target_include_directories(main PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/code/source/simulation)
 target_include_directories(main PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/code/source/ui)
 
@@ -32,7 +36,7 @@ enable_testing()
 
 add_executable(
     tests ${CMAKE_CURRENT_SOURCE_DIR}/code/gtest.cpp
-    ${SRC_FILES}
+    ${src_files}
 )
 target_include_directories(tests PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/code/source/simulation)
 target_include_directories(tests PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/code/source/ui)
