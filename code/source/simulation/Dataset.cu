@@ -27,7 +27,7 @@ namespace game_of_life
     DataSet::DataSet(int number_rows, int number_columns) {
         SetNumberColumns(number_columns);
         SetNumberRows(number_rows);
-        cells_ = std::vector<bool>(false, GetNumberColumns()*GetNumberRows());
+        cells_ = std::vector<bool>(GetNumberColumns()*GetNumberRows(), false);
     }
 
     DataSet::DataSet(const DataSet& original) {
