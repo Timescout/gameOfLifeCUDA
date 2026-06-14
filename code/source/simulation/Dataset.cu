@@ -18,8 +18,7 @@
 #include "DataSet.h"
 
 
-namespace game_of_life
-{
+namespace game_of_life {
 
 
     ///// Constructors and Destructors /////
