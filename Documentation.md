@@ -32,7 +32,7 @@ Thus the index of row r and column c in the vector is given by c(r+1).
 - Constructor, takes number of rows and columns and creates a blank DataSet where all cells are blank.
 - Copy Constructor
 - Get and Set for number of rows and number of columns
-- Get for cells, which returns a const vector.
-- GetCell, which takes a row and column and returns the value of the cell at that row and column. 
+- GetCells, which returns a const vector with all cell data.
+- GetCell, which takes a row and column and returns the value of the specific cell at that row and column. 
 - SetCell, which sets the value of a cell at the given row and column.
 - ToggleCell, which inverts the value of the cell at the given row and column.
